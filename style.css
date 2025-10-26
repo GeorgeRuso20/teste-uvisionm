@@ -1,0 +1,194 @@
+/* Definições Gerais e Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Substitua por uma fonte de sua preferência */
+}
+
+:root {
+    /* Cores da Uvision (Sugestão: Azul Profundo, Ciano Brilhante, Branco, Cinza) */
+    --cor-principal: #007bff;      /* Azul principal */
+    --cor-secundaria: #00bcd4;     /* Ciano */
+    --cor-fundo: #f4f7f6;          /* Fundo claro */
+    --cor-texto: #333;             /* Texto escuro */
+    --cor-borda: #ccc;             /* Borda padrão */
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: var(--cor-fundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Principal do Formulário */
+.cadastro-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--cor-sombra);
+    width: 100%;
+    max-width: 450px; /* Limite de largura para desktop */
+}
+
+/* Header e Logo */
+.cadastro-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    color: var(--cor-principal);
+    font-size: 2.2em;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.cadastro-header h2 {
+    color: var(--cor-texto);
+    font-size: 1.5em;
+    font-weight: 300;
+}
+
+/* Grupos de Input */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--cor-texto);
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--cor-principal);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+/* Checkbox de Termos */
+.input-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.input-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0; /* Impede que o checkbox diminua */
+}
+
+.input-checkbox label {
+    font-size: 0.9em;
+    color: var(--cor-texto);
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+.link-termos {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.link-termos:hover {
+    color: var(--cor-principal);
+    text-decoration: underline;
+}
+
+/* Botão de Cadastro */
+.btn-cadastro {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--cor-principal);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+}
+
+.btn-cadastro:hover {
+    background-color: #0056b3; /* Tom mais escuro */
+}
+
+.btn-cadastro:active {
+    transform: scale(0.99);
+}
+
+/* Footer do Formulário */
+.cadastro-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    font-size: 0.9em;
+    color: var(--cor-texto);
+}
+
+.link-login {
+    color: var(--cor-principal);
+    text-decoration: none;
+    font-weight: 600;
+    transition: text-decoration 0.3s;
+}
+
+.link-login:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade para Telas Menores (Ex: Celulares) */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .cadastro-container {
+        padding: 30px 20px;
+        border-radius: 0; /* Opcional: remover borda em telas pequenas para maximizar o espaço */
+        box-shadow: none;
+        max-width: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .logo {
+        font-size: 2em;
+    }
+
+    .cadastro-header h2 {
+        font-size: 1.3em;
+    }
+
+    .input-group input,
+    .btn-cadastro {
+        padding: 10px 12px;
+        font-size: 1em;
+    }
+
+    .input-checkbox label {
+        font-size: 0.85em;
+    }
+}
